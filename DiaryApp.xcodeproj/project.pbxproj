@@ -13,6 +13,9 @@
 		7C3A5FE021A559090032B151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3A5FDE21A559090032B151 /* Main.storyboard */; };
 		7C3A5FE221A5590A0032B151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C3A5FE121A5590A0032B151 /* Assets.xcassets */; };
 		7C3A5FE521A5590A0032B151 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3A5FE321A5590A0032B151 /* LaunchScreen.storyboard */; };
+		7C3A5FED21A56AA60032B151 /* AddDiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A5FEC21A56AA60032B151 /* AddDiaryController.swift */; };
+		7C3A5FEF21A59E910032B151 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A5FEE21A59E910032B151 /* CoreDataStack.swift */; };
+		7C3A5FF221A5BCFA0032B151 /* DiaryApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A5FF021A5BCFA0032B151 /* DiaryApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		7C3A5FE121A5590A0032B151 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C3A5FE421A5590A0032B151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C3A5FE621A5590A0032B151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C3A5FEC21A56AA60032B151 /* AddDiaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryController.swift; sourceTree = "<group>"; };
+		7C3A5FEE21A59E910032B151 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		7C3A5FF121A5BCFA0032B151 /* DiaryApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiaryApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +65,13 @@
 				7C3A5FD821A559090032B151 /* AppDelegate.swift */,
 				7C3A5FDA21A559090032B151 /* MasterViewController.swift */,
 				7C3A5FDC21A559090032B151 /* DetailViewController.swift */,
+				7C3A5FEC21A56AA60032B151 /* AddDiaryController.swift */,
 				7C3A5FDE21A559090032B151 /* Main.storyboard */,
 				7C3A5FE121A5590A0032B151 /* Assets.xcassets */,
 				7C3A5FE321A5590A0032B151 /* LaunchScreen.storyboard */,
 				7C3A5FE621A5590A0032B151 /* Info.plist */,
+				7C3A5FEE21A59E910032B151 /* CoreDataStack.swift */,
+				7C3A5FF021A5BCFA0032B151 /* DiaryApp.xcdatamodeld */,
 			);
 			path = DiaryApp;
 			sourceTree = "<group>";
@@ -138,7 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C3A5FEF21A59E910032B151 /* CoreDataStack.swift in Sources */,
 				7C3A5FDD21A559090032B151 /* DetailViewController.swift in Sources */,
+				7C3A5FED21A56AA60032B151 /* AddDiaryController.swift in Sources */,
+				7C3A5FF221A5BCFA0032B151 /* DiaryApp.xcdatamodeld in Sources */,
 				7C3A5FDB21A559090032B151 /* MasterViewController.swift in Sources */,
 				7C3A5FD921A559090032B151 /* AppDelegate.swift in Sources */,
 			);
@@ -340,6 +352,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7C3A5FF021A5BCFA0032B151 /* DiaryApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7C3A5FF121A5BCFA0032B151 /* DiaryApp.xcdatamodel */,
+			);
+			currentVersion = 7C3A5FF121A5BCFA0032B151 /* DiaryApp.xcdatamodel */;
+			path = DiaryApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7C3A5FCD21A559090032B151 /* Project object */;
 }

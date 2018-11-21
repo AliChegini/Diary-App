@@ -123,20 +123,45 @@
             </objects>
             <point key="canvasLocation" x="709" y="-630"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Diary Controller-->
         <scene sceneID="4a2-JC-R5e">
             <objects>
-                <viewController id="gFc-GY-VDu" sceneMemberID="viewController">
+                <viewController id="gFc-GY-VDu" customClass="AddDiaryController" customModule="DiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6gz-Qq-5q2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fh9-CR-2WC">
+                                <rect key="frame" x="20" y="84" width="335" height="283"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fh9-CR-2WC" firstAttribute="leading" secondItem="iqT-OU-C6o" secondAttribute="leading" constant="20" id="PYD-xk-1Jq"/>
+                            <constraint firstItem="iqT-OU-C6o" firstAttribute="trailing" secondItem="fh9-CR-2WC" secondAttribute="trailing" constant="20" id="TTa-aF-FvO"/>
+                            <constraint firstItem="iqT-OU-C6o" firstAttribute="bottom" secondItem="fh9-CR-2WC" secondAttribute="bottom" constant="300" id="rhW-h2-chN"/>
+                            <constraint firstItem="fh9-CR-2WC" firstAttribute="top" secondItem="iqT-OU-C6o" secondAttribute="top" constant="20" id="tn2-FJ-Z8Q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iqT-OU-C6o"/>
                     </view>
                     <navigationItem key="navigationItem" id="w8l-NC-fA7">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="FKw-OJ-m1M"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="buT-V6-ki9"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="FKw-OJ-m1M">
+                            <connections>
+                                <action selector="cancel:" destination="gFc-GY-VDu" id="kT1-Bp-mMX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="buT-V6-ki9">
+                            <connections>
+                                <action selector="save:" destination="gFc-GY-VDu" id="mP4-mH-8fm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="userInput" destination="fh9-CR-2WC" id="7E9-Bt-MOx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kr7-FU-5wj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
