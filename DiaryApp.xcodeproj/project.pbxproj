@@ -16,6 +16,8 @@
 		7C3A5FED21A56AA60032B151 /* AddDiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A5FEC21A56AA60032B151 /* AddDiaryController.swift */; };
 		7C3A5FEF21A59E910032B151 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A5FEE21A59E910032B151 /* CoreDataStack.swift */; };
 		7C3A5FF221A5BCFA0032B151 /* DiaryApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A5FF021A5BCFA0032B151 /* DiaryApp.xcdatamodeld */; };
+		7C3B449421A6AC7800341C50 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B449221A6AC7800341C50 /* Item+CoreDataClass.swift */; };
+		7C3B449521A6AC7800341C50 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B449321A6AC7800341C50 /* Item+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		7C3A5FEC21A56AA60032B151 /* AddDiaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryController.swift; sourceTree = "<group>"; };
 		7C3A5FEE21A59E910032B151 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		7C3A5FF121A5BCFA0032B151 /* DiaryApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiaryApp.xcdatamodel; sourceTree = "<group>"; };
+		7C3B449221A6AC7800341C50 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7C3B449321A6AC7800341C50 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				7C3A5FE621A5590A0032B151 /* Info.plist */,
 				7C3A5FEE21A59E910032B151 /* CoreDataStack.swift */,
 				7C3A5FF021A5BCFA0032B151 /* DiaryApp.xcdatamodeld */,
+				7C3B449221A6AC7800341C50 /* Item+CoreDataClass.swift */,
+				7C3B449321A6AC7800341C50 /* Item+CoreDataProperties.swift */,
 			);
 			path = DiaryApp;
 			sourceTree = "<group>";
@@ -149,10 +155,12 @@
 			files = (
 				7C3A5FEF21A59E910032B151 /* CoreDataStack.swift in Sources */,
 				7C3A5FDD21A559090032B151 /* DetailViewController.swift in Sources */,
+				7C3B449521A6AC7800341C50 /* Item+CoreDataProperties.swift in Sources */,
 				7C3A5FED21A56AA60032B151 /* AddDiaryController.swift in Sources */,
 				7C3A5FF221A5BCFA0032B151 /* DiaryApp.xcdatamodeld in Sources */,
 				7C3A5FDB21A559090032B151 /* MasterViewController.swift in Sources */,
 				7C3A5FD921A559090032B151 /* AppDelegate.swift in Sources */,
+				7C3B449421A6AC7800341C50 /* Item+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
