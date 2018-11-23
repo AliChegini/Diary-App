@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class AddDiaryController: UIViewController {
+    
+    let managedObjectContext = CoreDataStack().managedObjectContext
     
     @IBOutlet weak var userInput: UITextField!
     
@@ -21,8 +24,17 @@ class AddDiaryController: UIViewController {
     
     
     @IBAction func save(_ sender: Any) {
+        guard let text = userInput.text, !text.isEmpty else {
+            return
+        }
+        
+        let item = NSEntityDescription.insertNewObject(forEntityName: "Item", into: managedObjectContext) as! Item
+        item.text = text
+        managedObjectContext.saveChanges()
+        
         dismiss(animated: true, completion: nil)
     }
+    
     
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
