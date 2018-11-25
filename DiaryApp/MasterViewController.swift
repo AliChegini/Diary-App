@@ -13,19 +13,13 @@ class MasterViewController: UITableViewController {
 
     let managedObjectContext = CoreDataStack().managedObjectContext
     
-    lazy var fetchedResultsController: NSFetchedResultsController<Item> = {
-        let request: NSFetchRequest<Item> = Item.fetchRequest()
-        let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        
-        return controller
+    lazy var fetchedResultsController: DiaryFetchedResultsController = {
+        return DiaryFetchedResultsController(managedObjectContext: self.managedObjectContext, tableView: self.tableView)
     }()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         
         do {
             try fetchedResultsController.performFetch()
@@ -35,6 +29,7 @@ class MasterViewController: UITableViewController {
         
     }
     
+    // MARK: Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 0
@@ -54,13 +49,38 @@ class MasterViewController: UITableViewController {
         return configureCell(cell, at: indexPath)
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let item = fetchedResultsController.object(at: indexPath)
+        managedObjectContext.delete(item)
+        managedObjectContext.saveChanges()
+    }
+    
+    
     private func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCell {
         let item = fetchedResultsController.object(at: indexPath)
         
         cell.textLabel?.text = item.text
         return cell
     }
+    
+    // MARK: UITableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "newItem" {
+            let navigationController = segue.destination as! UINavigationController
+            let addDiaryController = navigationController.topViewController as! AddDiaryController
+            addDiaryController.managedObjectContext = self.managedObjectContext
+        }
+    }
 
     
 }
+
+
 

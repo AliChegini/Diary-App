@@ -114,7 +114,7 @@
                     <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="iMM-ya-vqo">
                             <connections>
-                                <segue destination="MHi-05-366" kind="presentation" id="gyo-rI-Ogt"/>
+                                <segue destination="MHi-05-366" kind="presentation" identifier="newItem" id="gyo-rI-Ogt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -11,7 +11,8 @@ import CoreData
 
 class AddDiaryController: UIViewController {
     
-    let managedObjectContext = CoreDataStack().managedObjectContext
+    // Will be used for dependency injection
+    var managedObjectContext: NSManagedObjectContext!
     
     @IBOutlet weak var userInput: UITextField!
     
