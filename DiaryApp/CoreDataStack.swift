@@ -28,7 +28,6 @@ class CoreDataStack {
         return container
     }()
     
-    
 }
 
 

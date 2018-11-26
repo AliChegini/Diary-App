@@ -20,7 +20,6 @@ class AddDiaryController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
     }
     
     
@@ -40,7 +39,6 @@ class AddDiaryController: UIViewController {
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
     
 
 }

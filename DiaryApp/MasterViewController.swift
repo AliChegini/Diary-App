@@ -13,55 +13,16 @@ class MasterViewController: UITableViewController {
 
     let managedObjectContext = CoreDataStack().managedObjectContext
     
-    lazy var fetchedResultsController: DiaryFetchedResultsController = {
-        return DiaryFetchedResultsController(managedObjectContext: self.managedObjectContext, tableView: self.tableView)
+    lazy var dataSource: DataSource = {
+        return DataSource(tableView: tableView, context: self.managedObjectContext)
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        do {
-            try fetchedResultsController.performFetch()
-        } catch {
-            print("Error fetching Item objects: \(error.localizedDescription)")
-        }
-        
+        tableView.dataSource = dataSource
     }
     
-    // MARK: Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return fetchedResultsController.sections?.count ?? 0
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let section = fetchedResultsController.sections?[section] else {
-            return 0
-        }
-        
-        return section.numberOfObjects
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
-        
-        return configureCell(cell, at: indexPath)
-    }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        let item = fetchedResultsController.object(at: indexPath)
-        managedObjectContext.delete(item)
-        managedObjectContext.saveChanges()
-    }
-    
-    
-    private func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCell {
-        let item = fetchedResultsController.object(at: indexPath)
-        
-        cell.textLabel?.text = item.text
-        return cell
-    }
     
     // MARK: UITableViewDelegate
     
@@ -84,7 +45,7 @@ class MasterViewController: UITableViewController {
             guard let navigationController = segue.destination as? UINavigationController, let dvc = navigationController.topViewController as? DetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
                 return
             }
-            let item = fetchedResultsController.object(at: indexPath)
+            let item = dataSource.object(at: indexPath)
             dvc.detailItem = item
             dvc.context = self.managedObjectContext
         }

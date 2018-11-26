@@ -16,7 +16,6 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailDescription: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let item = detailItem {
@@ -24,7 +23,6 @@ class DetailViewController: UIViewController {
         }
     }
     
-
 
     @IBAction func save(_ sender: Any) {
         if let item = detailItem, let newText = detailDescription.text {
@@ -44,8 +42,6 @@ class DetailViewController: UIViewController {
         }
     }
     
-    
-
 
 }
 
