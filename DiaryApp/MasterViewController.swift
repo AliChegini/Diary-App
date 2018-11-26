@@ -73,9 +73,20 @@ class MasterViewController: UITableViewController {
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "newItem" {
-            let navigationController = segue.destination as! UINavigationController
-            let addDiaryController = navigationController.topViewController as! AddDiaryController
+            
+            guard let navigationController = segue.destination as? UINavigationController, let addDiaryController = navigationController.topViewController as? AddDiaryController else {
+                return
+            }
             addDiaryController.managedObjectContext = self.managedObjectContext
+            
+        } else if segue.identifier == "showDetail" {
+            
+            guard let navigationController = segue.destination as? UINavigationController, let dvc = navigationController.topViewController as? DetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
+                return
+            }
+            let item = fetchedResultsController.object(at: indexPath)
+            dvc.detailItem = item
+            dvc.context = self.managedObjectContext
         }
     }
 

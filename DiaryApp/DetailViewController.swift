@@ -7,33 +7,44 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = detailItem {
-            if let label = detailDescriptionLabel {
-                label.text = detail.description
-            }
-        }
-    }
-
+    var detailItem: Item?
+    var context: NSManagedObjectContext!
+    
+    @IBOutlet weak var detailDescription: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        configureView()
-    }
-
-    var detailItem: NSDate? {
-        didSet {
-            // Update the view.
-            configureView()
+        if let item = detailItem {
+            detailDescription.text = item.text
         }
     }
+    
+
+
+    @IBAction func save(_ sender: Any) {
+        if let item = detailItem, let newText = detailDescription.text {
+            item.text = newText
+            context.saveChanges()
+        
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    
+    @IBAction func deleteItem(_ sender: Any) {
+        if let item = detailItem {
+            context.delete(item)
+            context.saveChanges()
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    
 
 
 }
