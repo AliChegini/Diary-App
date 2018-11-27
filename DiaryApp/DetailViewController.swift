@@ -28,8 +28,7 @@ class DetailViewController: UIViewController {
         if let item = detailItem, let newText = detailDescription.text {
             item.text = newText
             context.saveChanges()
-        
-            navigationController?.popViewController(animated: true)
+            navigationController?.popToRootViewController(animated: true)
         }
     }
     

@@ -14,6 +14,9 @@ class AddDiaryController: UIViewController {
     // Will be used for dependency injection
     var managedObjectContext: NSManagedObjectContext!
     
+    
+    let permissionController = PermissionController()
+    
     @IBOutlet weak var userInput: UITextField!
     
 
@@ -41,4 +44,11 @@ class AddDiaryController: UIViewController {
     }
     
 
+    
+    @IBAction func requestLocation(_ sender: Any) {
+        permissionController.requestLocationPermission()
+    }
+    
+    
+    
 }
