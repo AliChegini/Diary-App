@@ -41,6 +41,16 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     
+    static var isAuthorized: Bool {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    
     func requestLocationAuthorization() throws {
         let authorizationStatus = CLLocationManager.authorizationStatus()
         
@@ -82,6 +92,15 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else {
+            delegate?.failedWithError(.unableToFindLocation)
+            return
+        }
+    
+        let coordinate = Coordinate(location: location)
+        delegate?.obtainedCoordinates(coordinate)
+    }
     
 }
 

@@ -28,7 +28,7 @@ class DetailViewController: UIViewController {
         if let item = detailItem, let newText = detailDescription.text {
             item.text = newText
             context.saveChanges()
-            navigationController?.popToRootViewController(animated: true)
+            navigationController?.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -37,7 +37,7 @@ class DetailViewController: UIViewController {
         if let item = detailItem {
             context.delete(item)
             context.saveChanges()
-            navigationController?.popViewController(animated: true)
+            navigationController?.navigationController?.popViewController(animated: true)
         }
     }
     

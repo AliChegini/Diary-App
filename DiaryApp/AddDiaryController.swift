@@ -17,6 +17,12 @@ class AddDiaryController: UIViewController {
     
     let permissionController = PermissionController()
     
+    lazy var locationManager: LocationManager = {
+       return LocationManager(delegate: self, permissionDelegate: nil)
+    }()
+
+    var coordinate: Coordinate?
+    
     @IBOutlet weak var userInput: UITextField!
     
 
@@ -47,8 +53,23 @@ class AddDiaryController: UIViewController {
     
     @IBAction func requestLocation(_ sender: Any) {
         permissionController.requestLocationPermission()
+        locationManager.requestLocation()
     }
     
+    
+    
+}
+
+
+extension AddDiaryController: LocationManagerDelegate {
+    func obtainedCoordinates(_ coordinate: Coordinate) {
+        self.coordinate = coordinate
+        print("Coordinate is: \(coordinate)")
+    }
+    
+    func failedWithError(_ error: LocationError) {
+        print("Error: \(error)")
+    }
     
     
 }

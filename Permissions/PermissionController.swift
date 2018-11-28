@@ -27,7 +27,7 @@ class PermissionController: UIViewController, LocationPermissionDelegate {
     
     // MARK: Location Permission Delegate
     func authorizationSucceeded() {
-        print("We have the location of the user")
+        print("We have the permission to access the user location")
     }
     
     func authorizationFailedWithStatus(_ status: CLAuthorizationStatus) {
