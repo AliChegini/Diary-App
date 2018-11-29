@@ -155,8 +155,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fh9-CR-2WC">
-                                <rect key="frame" x="20" y="84" width="335" height="100"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What happened today?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fh9-CR-2WC">
+                                <rect key="frame" x="100" y="134" width="255" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="6en-4V-FPh"/>
                                 </constraints>
@@ -164,20 +164,81 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wk-qM-xIE">
-                                <rect key="frame" x="88" y="318" width="198" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Request Location Permission"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wk-qM-xIE">
+                                <rect key="frame" x="100" y="254" width="120" height="30"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="5NP-rh-pHV"/>
+                                    <constraint firstAttribute="height" constant="30" id="E9A-wk-ZQH"/>
+                                    <constraint firstAttribute="width" constant="120" id="Pbv-sy-Vmk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="  Add location" image="icn_geolocate">
+                                    <color key="titleColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="requestLocation:" destination="gFc-GY-VDu" eventType="touchUpInside" id="1Qr-ic-xKQ"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="aKp-zQ-WZP">
+                                <rect key="frame" x="20" y="304" width="335" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tag-7f-yJX">
+                                        <rect key="frame" x="0.0" y="0.0" width="92.5" height="40"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Bad" image="icn_bad">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ob1-sM-0p8">
+                                        <rect key="frame" x="121.5" y="0.0" width="92" height="40"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Average" image="icn_average">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyt-5F-6Ed">
+                                        <rect key="frame" x="242.5" y="0.0" width="92.5" height="40"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Good" image="icn_happy">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8C4-j4-5oi"/>
+                                </constraints>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_noimage" translatesAutoresizingMaskIntoConstraints="NO" id="1kX-Wz-byw">
+                                <rect key="frame" x="10" y="84" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="rBc-Kw-uqI"/>
+                                    <constraint firstAttribute="width" constant="70" id="t4e-aN-qCU"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWS-qd-n0Q">
+                                <rect key="frame" x="100" y="84" width="36" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fh9-CR-2WC" firstAttribute="leading" secondItem="iqT-OU-C6o" secondAttribute="leading" constant="20" id="PYD-xk-1Jq"/>
+                            <constraint firstItem="1kX-Wz-byw" firstAttribute="top" secondItem="iqT-OU-C6o" secondAttribute="top" constant="20" id="44T-p6-3Dh"/>
+                            <constraint firstItem="iqT-OU-C6o" firstAttribute="trailing" secondItem="aKp-zQ-WZP" secondAttribute="trailing" constant="20" id="6qu-CC-5f8"/>
+                            <constraint firstItem="1kX-Wz-byw" firstAttribute="leading" secondItem="iqT-OU-C6o" secondAttribute="leading" constant="10" id="IDK-8Y-tx6"/>
+                            <constraint firstItem="IWS-qd-n0Q" firstAttribute="leading" secondItem="1kX-Wz-byw" secondAttribute="trailing" constant="20" id="IbG-BS-qf1"/>
+                            <constraint firstItem="fh9-CR-2WC" firstAttribute="top" secondItem="IWS-qd-n0Q" secondAttribute="bottom" constant="20" id="OHd-sf-nQS"/>
+                            <constraint firstItem="fh9-CR-2WC" firstAttribute="leading" secondItem="iqT-OU-C6o" secondAttribute="leading" constant="100" id="PYD-xk-1Jq"/>
+                            <constraint firstItem="IWS-qd-n0Q" firstAttribute="top" secondItem="iqT-OU-C6o" secondAttribute="top" constant="20" id="SGi-hy-cea"/>
                             <constraint firstItem="iqT-OU-C6o" firstAttribute="trailing" secondItem="fh9-CR-2WC" secondAttribute="trailing" constant="20" id="TTa-aF-FvO"/>
-                            <constraint firstItem="fh9-CR-2WC" firstAttribute="top" secondItem="iqT-OU-C6o" secondAttribute="top" constant="20" id="tn2-FJ-Z8Q"/>
+                            <constraint firstItem="aKp-zQ-WZP" firstAttribute="leading" secondItem="iqT-OU-C6o" secondAttribute="leading" constant="20" id="aUn-Xc-rEh"/>
+                            <constraint firstItem="9wk-qM-xIE" firstAttribute="leading" secondItem="iqT-OU-C6o" secondAttribute="leading" constant="100" id="asQ-DY-Y3l"/>
+                            <constraint firstItem="aKp-zQ-WZP" firstAttribute="top" secondItem="9wk-qM-xIE" secondAttribute="bottom" constant="20" id="c1t-3C-Qat"/>
+                            <constraint firstItem="9wk-qM-xIE" firstAttribute="top" secondItem="fh9-CR-2WC" secondAttribute="bottom" constant="20" id="o00-xh-pIw"/>
+                            <constraint firstItem="fh9-CR-2WC" firstAttribute="top" secondItem="iqT-OU-C6o" secondAttribute="top" constant="70" id="tn2-FJ-Z8Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iqT-OU-C6o"/>
                     </view>
@@ -236,6 +297,13 @@
             <point key="canvasLocation" x="1648.8" y="-630.13493253373315"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icn_average" width="25" height="25"/>
+        <image name="icn_bad" width="25" height="25"/>
+        <image name="icn_geolocate" width="17" height="17"/>
+        <image name="icn_happy" width="25" height="25"/>
+        <image name="icn_noimage" width="47.5" height="47.5"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
