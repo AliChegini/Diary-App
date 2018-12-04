@@ -11,9 +11,8 @@ import CoreData
 
 class AddDiaryController: UIViewController {
     
-    // Will be used for dependency injection
+    // used for dependency injection
     var managedObjectContext: NSManagedObjectContext!
-    
     
     let permissionController = PermissionController()
     
@@ -25,9 +24,17 @@ class AddDiaryController: UIViewController {
     
     @IBOutlet weak var userInput: UITextField!
     
-
+    @IBOutlet weak var date: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // should be put in a function or extension
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .full
+        let convertedDate = dateFormatter.string(from: Date())
+        
+        date.text = convertedDate
 
     }
     
@@ -55,8 +62,6 @@ class AddDiaryController: UIViewController {
         permissionController.requestLocationPermission()
         locationManager.requestLocation()
     }
-    
-    
     
 }
 

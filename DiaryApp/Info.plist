@@ -52,6 +52,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We use your location data to insert into your diary</string>
+	<string>We use your location to insert into your diary</string>
 </dict>
 </plist>

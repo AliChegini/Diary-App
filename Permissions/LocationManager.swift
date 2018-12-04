@@ -15,6 +15,8 @@ enum LocationError : Error {
     case unableToFindLocation
 }
 
+// requesting permission and location are two different task
+// that's why I have separated protocols delegates
 
 protocol LocationPermissionDelegate: class {
     func authorizationSucceeded()
@@ -29,25 +31,17 @@ protocol LocationManagerDelegate: class {
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
     private let manager = CLLocationManager()
+    
     weak var permissionDelegate: LocationPermissionDelegate?
     weak var delegate: LocationManagerDelegate?
     
+    // dependency injection
     init(delegate: LocationManagerDelegate?, permissionDelegate: LocationPermissionDelegate?) {
         self.delegate = delegate
         self.permissionDelegate = permissionDelegate
         super.init()
         
         manager.delegate = self
-    }
-    
-    
-    static var isAuthorized: Bool {
-        switch CLLocationManager.authorizationStatus() {
-        case .authorizedWhenInUse:
-            return true
-        default:
-            return false
-        }
     }
     
     

@@ -45,9 +45,15 @@ class DataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        guard let cell: MasterCell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as? MasterCell else {
+            fatalError()
+        }
+        let item = fetchedResultsController.object(at: indexPath)
         
-        return configureCell(cell, at: indexPath)
+        cell.dateLabel.text = Date().description
+        cell.diaryText.text = item.text
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -56,23 +62,7 @@ class DataSource: NSObject, UITableViewDataSource {
         context.saveChanges()
     }
     
-    
-    private func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCell {
-        let item = fetchedResultsController.object(at: indexPath)
-        
-        cell.textLabel?.text = item.text
-        return cell
-    }
-    
-    
-    
+
 }
-
-
-
-
-
-
-
 
 

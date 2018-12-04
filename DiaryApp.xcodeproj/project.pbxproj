@@ -23,6 +23,7 @@
 		7C3C9CA721AD520F00995E1C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C9CA621AD520F00995E1C /* LocationManager.swift */; };
 		7C3C9CA921AD5E4200995E1C /* PermissionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C9CA821AD5E4200995E1C /* PermissionController.swift */; };
 		7C3C9CAC21ADA8E000995E1C /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C9CAB21ADA8E000995E1C /* Coordinate.swift */; };
+		7C427EF721B67BCE0022B7F5 /* MasterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C427EF621B67BCE0022B7F5 /* MasterCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		7C3C9CA621AD520F00995E1C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		7C3C9CA821AD5E4200995E1C /* PermissionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionController.swift; sourceTree = "<group>"; };
 		7C3C9CAB21ADA8E000995E1C /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		7C427EF621B67BCE0022B7F5 /* MasterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,8 @@
 				7C3A5FEC21A56AA60032B151 /* AddDiaryController.swift */,
 				7C3B78D321A9438C00D149FE /* DiaryFetchedResultsController.swift */,
 				7C3A5FEE21A59E910032B151 /* CoreDataStack.swift */,
+				7C36962B21AC48F9006CCC2A /* DataSource.swift */,
+				7C427EF621B67BCE0022B7F5 /* MasterCell.swift */,
 				7C3A5FDE21A559090032B151 /* Main.storyboard */,
 				7C3A5FE121A5590A0032B151 /* Assets.xcassets */,
 				7C3A5FE321A5590A0032B151 /* LaunchScreen.storyboard */,
@@ -91,7 +95,6 @@
 				7C3A5FF021A5BCFA0032B151 /* DiaryApp.xcdatamodeld */,
 				7C3B449621A6B84F00341C50 /* Item+CoreDataClass.swift */,
 				7C3B449721A6B84F00341C50 /* Item+CoreDataProperties.swift */,
-				7C36962B21AC48F9006CCC2A /* DataSource.swift */,
 			);
 			path = DiaryApp;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				7C3A5FF221A5BCFA0032B151 /* DiaryApp.xcdatamodeld in Sources */,
 				7C3B78D421A9438C00D149FE /* DiaryFetchedResultsController.swift in Sources */,
 				7C3A5FDB21A559090032B151 /* MasterViewController.swift in Sources */,
+				7C427EF721B67BCE0022B7F5 /* MasterCell.swift in Sources */,
 				7C3C9CAC21ADA8E000995E1C /* Coordinate.swift in Sources */,
 				7C3A5FD921A559090032B151 /* AppDelegate.swift in Sources */,
 				7C36962C21AC48F9006CCC2A /* DataSource.swift in Sources */,
