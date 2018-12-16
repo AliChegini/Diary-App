@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C33E4E621C6816D003DC64A /* PhotoPickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C33E4E521C6816D003DC64A /* PhotoPickerManager.swift */; };
 		7C36962C21AC48F9006CCC2A /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C36962B21AC48F9006CCC2A /* DataSource.swift */; };
 		7C3A5FD921A559090032B151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A5FD821A559090032B151 /* AppDelegate.swift */; };
 		7C3A5FDB21A559090032B151 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A5FDA21A559090032B151 /* MasterViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C33E4E521C6816D003DC64A /* PhotoPickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerManager.swift; sourceTree = "<group>"; };
 		7C36962B21AC48F9006CCC2A /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		7C3A5FD521A559090032B151 /* DiaryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3A5FD821A559090032B151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				7C3A5FF021A5BCFA0032B151 /* DiaryApp.xcdatamodeld */,
 				7C3B449621A6B84F00341C50 /* Item+CoreDataClass.swift */,
 				7C3B449721A6B84F00341C50 /* Item+CoreDataProperties.swift */,
+				7C33E4E521C6816D003DC64A /* PhotoPickerManager.swift */,
 			);
 			path = DiaryApp;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				7C3A5FEF21A59E910032B151 /* CoreDataStack.swift in Sources */,
 				7C3A5FDD21A559090032B151 /* DetailViewController.swift in Sources */,
 				7C3C9CA921AD5E4200995E1C /* PermissionController.swift in Sources */,
+				7C33E4E621C6816D003DC64A /* PhotoPickerManager.swift in Sources */,
 				7C3B449921A6B84F00341C50 /* Item+CoreDataProperties.swift in Sources */,
 				7C3C9CA721AD520F00995E1C /* LocationManager.swift in Sources */,
 				7C3A5FED21A56AA60032B151 /* AddDiaryController.swift in Sources */,

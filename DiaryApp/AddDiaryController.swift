@@ -23,8 +23,16 @@ class AddDiaryController: UIViewController {
     var coordinate: Coordinate?
     
     @IBOutlet weak var userInput: UITextField!
-    
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var imagePickerButton: UIButton!
+    
+    
+    lazy var photoPickerManager: PhotoPickerManager = {
+       let manager = PhotoPickerManager(presentingViewController: self)
+        manager.delegate = self
+        return manager
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +45,11 @@ class AddDiaryController: UIViewController {
         date.text = convertedDate
 
     }
+    
+    @IBAction func launchCamera(_ sender: Any) {
+        photoPickerManager.presentPhotoPicker(animated: true)
+    }
+    
     
     
     @IBAction func save(_ sender: Any) {
@@ -77,4 +90,11 @@ extension AddDiaryController: LocationManagerDelegate {
     }
     
     
+}
+
+
+extension AddDiaryController: PhotoPickerManagerDelegate {
+    func manager(_ manager: PhotoPickerManager, didPickImage image: UIImage) {
+        manager.dismissPhotoPicker(animated: true, completion: nil)
+    }
 }
