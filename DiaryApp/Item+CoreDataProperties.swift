@@ -7,18 +7,31 @@
 //
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 
 extension Item {
-
+    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Item> {
         let request =  NSFetchRequest<Item>(entityName: "Item")
         request.sortDescriptors = [NSSortDescriptor(key: "text", ascending: true)]
         return request
     }
-
-    @NSManaged public var text: String
-
+    
+//    class func with(_ image: UIImage, in context: NSManagedObjectContext) -> Item {
+//        let item = NSEntityDescription.insertNewObject(forEntityName: "Item", into: context) as! Item
+//        item.imageData = image.jpegData(compressionQuality: 1.0)! as NSData
+//
+//        return item
+//    }
+    
+    
 }
+
+
+
+
+
+
+

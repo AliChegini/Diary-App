@@ -59,6 +59,7 @@ class AddDiaryController: UIViewController {
         
         let item = NSEntityDescription.insertNewObject(forEntityName: "Item", into: managedObjectContext) as! Item
         item.text = text
+        
         managedObjectContext.saveChanges()
         
         dismiss(animated: true, completion: nil)

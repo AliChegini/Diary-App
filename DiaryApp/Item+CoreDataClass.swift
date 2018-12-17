@@ -12,5 +12,7 @@ import CoreData
 
 
 public class Item: NSManagedObject {
-
+    @NSManaged public var text: String
+    @NSManaged public var photo: Photo
 }
+
