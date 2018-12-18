@@ -96,6 +96,9 @@ extension AddDiaryController: LocationManagerDelegate {
 
 extension AddDiaryController: PhotoPickerManagerDelegate {
     func manager(_ manager: PhotoPickerManager, didPickImage image: UIImage) {
+        
+        //let _ = Item.with(image, in: managedObjectContext)
+        
         manager.dismissPhotoPicker(animated: true, completion: nil)
     }
 }

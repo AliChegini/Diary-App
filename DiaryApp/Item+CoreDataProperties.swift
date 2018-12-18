@@ -19,19 +19,15 @@ extension Item {
         return request
     }
     
-//    class func with(_ image: UIImage, in context: NSManagedObjectContext) -> Item {
-//        let item = NSEntityDescription.insertNewObject(forEntityName: "Item", into: context) as! Item
-//        item.imageData = image.jpegData(compressionQuality: 1.0)! as NSData
-//
-//        return item
-//    }
+    class func with(_ image: UIImage, in context: NSManagedObjectContext) -> Item {
+        let item = NSEntityDescription.insertNewObject(forEntityName: "Item", into: context) as! Item
+        
+        // I am not sure if it is OK to only save the image and not the rest of the properties!
+        item.imageData = image.jpegData(compressionQuality: 1.0)! as NSData
+
+        return item
+    }
     
     
 }
-
-
-
-
-
-
 

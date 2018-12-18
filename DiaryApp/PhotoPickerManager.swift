@@ -19,6 +19,9 @@ class PhotoPickerManager: NSObject {
     private let presentingController: UIViewController
     weak var delegate: PhotoPickerManagerDelegate?
     
+    // store property to keep a reference of the image picked
+    var image = UIImage()
+    
     init(presentingViewController: UIViewController) {
         self.presentingController = presentingViewController
         super.init()
@@ -57,6 +60,11 @@ extension PhotoPickerManager: UIImagePickerControllerDelegate, UINavigationContr
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             return
         }
+        
+        self.image = image
+        
+        // If i try to save here I don't have the context to use
+        //Item.with(image, in: <#T##NSManagedObjectContext#>)
         
         delegate?.manager(self, didPickImage: image)
     }
