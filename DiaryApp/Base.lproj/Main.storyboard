@@ -192,12 +192,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wk-qM-xIE">
-                                <rect key="frame" x="100" y="254" width="120" height="30"/>
+                                <rect key="frame" x="100" y="254" width="255" height="30"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="5NP-rh-pHV"/>
                                     <constraint firstAttribute="height" constant="30" id="E9A-wk-ZQH"/>
-                                    <constraint firstAttribute="width" constant="120" id="Pbv-sy-Vmk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="  Add location" image="icn_geolocate">
@@ -258,6 +256,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="iqT-OU-C6o" firstAttribute="trailing" secondItem="aKp-zQ-WZP" secondAttribute="trailing" constant="10" id="6qu-CC-5f8"/>
+                            <constraint firstItem="iqT-OU-C6o" firstAttribute="trailing" secondItem="9wk-qM-xIE" secondAttribute="trailing" constant="20" id="FUM-eR-8Q9"/>
                             <constraint firstItem="fh9-CR-2WC" firstAttribute="top" secondItem="IWS-qd-n0Q" secondAttribute="bottom" constant="20" id="OHd-sf-nQS"/>
                             <constraint firstItem="fh9-CR-2WC" firstAttribute="leading" secondItem="iqT-OU-C6o" secondAttribute="leading" constant="100" id="PYD-xk-1Jq"/>
                             <constraint firstItem="IWS-qd-n0Q" firstAttribute="top" secondItem="iqT-OU-C6o" secondAttribute="top" constant="20" id="SGi-hy-cea"/>
@@ -288,6 +287,7 @@
                     <connections>
                         <outlet property="date" destination="IWS-qd-n0Q" id="uS1-T5-km6"/>
                         <outlet property="imagePickerButton" destination="I2e-X9-6z9" id="oXD-FG-FJY"/>
+                        <outlet property="locationButton" destination="9wk-qM-xIE" id="Td4-tZ-qS6"/>
                         <outlet property="userInput" destination="fh9-CR-2WC" id="7E9-Bt-MOx"/>
                     </connections>
                 </viewController>

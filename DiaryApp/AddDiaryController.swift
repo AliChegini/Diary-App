@@ -20,12 +20,16 @@ class AddDiaryController: UIViewController {
        return LocationManager(delegate: self, permissionDelegate: nil)
     }()
 
-    var coordinate: Coordinate?
     
     @IBOutlet weak var userInput: UITextField!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var imagePickerButton: UIButton!
+    @IBOutlet weak var locationButton: UIButton!
     
+    var location: String?
+    
+    // store property to keep a reference of the picked image
+    var pickedImage = UIImage()
     
     lazy var photoPickerManager: PhotoPickerManager = {
        let manager = PhotoPickerManager(presentingViewController: self)
@@ -51,17 +55,23 @@ class AddDiaryController: UIViewController {
     }
     
     
-    
     @IBAction func save(_ sender: Any) {
+        
+        guard let item = NSEntityDescription.insertNewObject(forEntityName: "Item", into: managedObjectContext) as? Item else {
+            return
+        }
+        
         guard let text = userInput.text, !text.isEmpty else {
             return
         }
         
-        let item = NSEntityDescription.insertNewObject(forEntityName: "Item", into: managedObjectContext) as! Item
+        if let nsdataImage = pickedImage.jpegData(compressionQuality: 1.0) as NSData? {
+            item.imageData = nsdataImage
+        }
+    
         item.text = text
         
         managedObjectContext.saveChanges()
-        
         dismiss(animated: true, completion: nil)
     }
     
@@ -71,7 +81,6 @@ class AddDiaryController: UIViewController {
     }
     
 
-    
     @IBAction func requestLocation(_ sender: Any) {
         permissionController.requestLocationPermission()
         locationManager.requestLocation()
@@ -81,23 +90,22 @@ class AddDiaryController: UIViewController {
 
 
 extension AddDiaryController: LocationManagerDelegate {
-    func obtainedCoordinates(_ coordinate: Coordinate) {
-        self.coordinate = coordinate
-        print("Coordinate is: \(coordinate)")
+    
+    func obtainedLocation(_ address: String) {
+        self.location = address
+        locationButton.setTitle(address, for: .normal)
     }
     
     func failedWithError(_ error: LocationError) {
         print("Error: \(error)")
     }
-    
-    
 }
 
 
 extension AddDiaryController: PhotoPickerManagerDelegate {
     func manager(_ manager: PhotoPickerManager, didPickImage image: UIImage) {
-        
-        //let _ = Item.with(image, in: managedObjectContext)
+        pickedImage = image
+        imagePickerButton.setImage(image, for: .normal)
         
         manager.dismissPhotoPicker(animated: true, completion: nil)
     }

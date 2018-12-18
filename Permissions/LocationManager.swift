@@ -15,16 +15,15 @@ enum LocationError : Error {
     case unableToFindLocation
 }
 
-// requesting permission and location are two different task
-// that's why I have separated protocols delegates
-
+// requesting permission and location are two different tasks
+// therefore protocols delegates are separated
 protocol LocationPermissionDelegate: class {
     func authorizationSucceeded()
     func authorizationFailedWithStatus(_ status: CLAuthorizationStatus)
 }
 
 protocol LocationManagerDelegate: class {
-    func obtainedCoordinates(_ coordinate: Coordinate)
+    func obtainedLocation(_ address: String)
     func failedWithError(_ error: LocationError)
 }
 
@@ -91,12 +90,22 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             delegate?.failedWithError(.unableToFindLocation)
             return
         }
-    
-        let coordinate = Coordinate(location: location)
-        delegate?.obtainedCoordinates(coordinate)
+        
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location) { (placemark, error) in
+            if let placemark = placemark {
+                var stringLocation = ""
+                let info = placemark[0]
+                if let name = info.name, let city = info.locality, let countryCode = info.isoCountryCode {
+                    stringLocation = "\(name), \(city), \(countryCode)"
+                    
+                    // sending the location info via delegate
+                    self.delegate?.obtainedLocation(stringLocation)
+                }
+            }
+        }
+        
     }
     
+    
 }
-
-
-
