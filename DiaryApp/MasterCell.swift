@@ -12,6 +12,8 @@ class MasterCell: UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var diaryText: UILabel!
-    
+    @IBOutlet weak var picture: UIImageView!
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var mood: UIImageView!
     
 }

@@ -14,5 +14,8 @@ import CoreData
 public class Item: NSManagedObject {
     @NSManaged public var text: String
     @NSManaged public var imageData: NSData?
+    @NSManaged public var mood: String?
+    @NSManaged public var date: String
+    @NSManaged public var location: String?
 }
 

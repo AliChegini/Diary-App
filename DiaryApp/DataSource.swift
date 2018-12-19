@@ -50,8 +50,27 @@ class DataSource: NSObject, UITableViewDataSource {
         }
         let item = fetchedResultsController.object(at: indexPath)
         
-        cell.dateLabel.text = Date().description
+        cell.dateLabel.text = item.date
         cell.diaryText.text = item.text
+        
+        cell.location.text = item.location
+        if let img = item.imageData {
+            cell.picture.image = UIImage(data: img as Data)
+            cell.picture.setRounded()
+        } else {
+            cell.picture.image = UIImage(named: "icn_noimage")
+        }
+        
+        if let mood = item.mood {
+            switch mood {
+            case "bad": cell.mood.image = UIImage(named: "icn_bad")
+            case "average": cell.mood.image = UIImage(named: "icn_average")
+            case "good": cell.mood.image = UIImage(named: "icn_happy")
+            default:
+                cell.mood.image = UIImage(named: "icn_noimage")
+                break
+            }
+        }
         
         return cell
     }
@@ -66,3 +85,10 @@ class DataSource: NSObject, UITableViewDataSource {
 }
 
 
+extension UIImageView {
+    
+    func setRounded() {
+        self.layer.cornerRadius = (self.frame.width / 2)
+        self.layer.masksToBounds = true
+    }
+}

@@ -25,8 +25,12 @@ class AddDiaryController: UIViewController {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var imagePickerButton: UIButton!
     @IBOutlet weak var locationButton: UIButton!
+    @IBOutlet weak var moodImage: UIImageView!
+    
     
     var location: String?
+    var mood: String?
+    
     
     // store property to keep a reference of the picked image
     var pickedImage = UIImage()
@@ -41,13 +45,15 @@ class AddDiaryController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // should be put in a function or extension
+        date.text = dateGenerator()
+
+    }
+    
+    func dateGenerator() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .full
         let convertedDate = dateFormatter.string(from: Date())
-        
-        date.text = convertedDate
-
+        return convertedDate
     }
     
     @IBAction func launchCamera(_ sender: Any) {
@@ -65,11 +71,20 @@ class AddDiaryController: UIViewController {
             return
         }
         
-        if let nsdataImage = pickedImage.jpegData(compressionQuality: 1.0) as NSData? {
+        if let nsdataImage = pickedImage.jpegData(compressionQuality: 0.0) as NSData? {
             item.imageData = nsdataImage
         }
-    
+        
+        if let location = location {
+            item.location = location
+        }
+        
+        if let mood = mood {
+            item.mood = mood
+        }
+        
         item.text = text
+        item.date = dateGenerator()
         
         managedObjectContext.saveChanges()
         dismiss(animated: true, completion: nil)
@@ -85,6 +100,23 @@ class AddDiaryController: UIViewController {
         permissionController.requestLocationPermission()
         locationManager.requestLocation()
     }
+    
+    
+    @IBAction func goodMood(_ sender: UIButton) {
+        mood = "good"
+        moodImage.image = UIImage(named: "icn_happy")
+    }
+    
+    @IBAction func averageMood(_ sender: UIButton) {
+        mood = "average"
+        moodImage.image = UIImage(named: "icn_average")
+    }
+    
+    @IBAction func badMood(_ sender: UIButton) {
+        mood = "bad"
+        moodImage.image = UIImage(named: "icn_bad")
+    }
+    
     
 }
 
