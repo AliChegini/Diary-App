@@ -29,7 +29,6 @@ class DataSource: NSObject, UITableViewDataSource {
     }
     
     
-    
     // MARK: Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -81,12 +80,10 @@ class DataSource: NSObject, UITableViewDataSource {
         context.saveChanges()
     }
     
-
 }
 
 
 extension UIImageView {
-    
     func setRounded() {
         self.layer.cornerRadius = (self.frame.width / 2)
         self.layer.masksToBounds = true

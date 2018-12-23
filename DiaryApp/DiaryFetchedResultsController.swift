@@ -56,9 +56,4 @@ class DiaryFetchedResultsController: NSFetchedResultsController<Item>, NSFetched
         tableView.endUpdates()
     }
     
-    
 }
-
-
-
-

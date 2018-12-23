@@ -45,15 +45,8 @@ class AddDiaryController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        date.text = dateGenerator()
+        date.text = Item.dateGenerator()
 
-    }
-    
-    func dateGenerator() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .full
-        let convertedDate = dateFormatter.string(from: Date())
-        return convertedDate
     }
     
     @IBAction func launchCamera(_ sender: Any) {
@@ -84,7 +77,7 @@ class AddDiaryController: UIViewController {
         }
         
         item.text = text
-        item.date = dateGenerator()
+        item.date = "Created on \(Item.dateGenerator())"
         
         managedObjectContext.saveChanges()
         dismiss(animated: true, completion: nil)

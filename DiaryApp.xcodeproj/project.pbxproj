@@ -24,7 +24,6 @@
 		7C3B78D421A9438C00D149FE /* DiaryFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B78D321A9438C00D149FE /* DiaryFetchedResultsController.swift */; };
 		7C3C9CA721AD520F00995E1C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C9CA621AD520F00995E1C /* LocationManager.swift */; };
 		7C3C9CA921AD5E4200995E1C /* PermissionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C9CA821AD5E4200995E1C /* PermissionController.swift */; };
-		7C3C9CAC21ADA8E000995E1C /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3C9CAB21ADA8E000995E1C /* Coordinate.swift */; };
 		7C427EF721B67BCE0022B7F5 /* MasterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C427EF621B67BCE0022B7F5 /* MasterCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +59,6 @@
 		7C3B78D321A9438C00D149FE /* DiaryFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryFetchedResultsController.swift; sourceTree = "<group>"; };
 		7C3C9CA621AD520F00995E1C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		7C3C9CA821AD5E4200995E1C /* PermissionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionController.swift; sourceTree = "<group>"; };
-		7C3C9CAB21ADA8E000995E1C /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		7C427EF621B67BCE0022B7F5 /* MasterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,7 +94,6 @@
 			children = (
 				7C3A5FD721A559090032B151 /* DiaryApp */,
 				7C3C9CA521AD51C800995E1C /* Permissions */,
-				7C3C9CAA21ADA8CA00995E1C /* Model */,
 				7C2E61B421CC0A01002C3697 /* DiaryAppTests */,
 				7C3A5FD621A559090032B151 /* Products */,
 			);
@@ -141,14 +138,6 @@
 				7C3C9CA621AD520F00995E1C /* LocationManager.swift */,
 			);
 			path = Permissions;
-			sourceTree = "<group>";
-		};
-		7C3C9CAA21ADA8CA00995E1C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7C3C9CAB21ADA8E000995E1C /* Coordinate.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +260,6 @@
 				7C3B78D421A9438C00D149FE /* DiaryFetchedResultsController.swift in Sources */,
 				7C3A5FDB21A559090032B151 /* MasterViewController.swift in Sources */,
 				7C427EF721B67BCE0022B7F5 /* MasterCell.swift in Sources */,
-				7C3C9CAC21ADA8E000995E1C /* Coordinate.swift in Sources */,
 				7C3A5FD921A559090032B151 /* AppDelegate.swift in Sources */,
 				7C36962C21AC48F9006CCC2A /* DataSource.swift in Sources */,
 				7C3B449821A6B84F00341C50 /* Item+CoreDataClass.swift in Sources */,

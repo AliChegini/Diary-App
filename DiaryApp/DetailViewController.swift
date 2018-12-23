@@ -27,6 +27,7 @@ class DetailViewController: UIViewController {
     @IBAction func save(_ sender: Any) {
         if let item = detailItem, let newText = detailDescription.text {
             item.text = newText
+            item.date = "Updated on \(Item.dateGenerator())"
             context.saveChanges()
             navigationController?.navigationController?.popViewController(animated: true)
         }
@@ -40,7 +41,5 @@ class DetailViewController: UIViewController {
             navigationController?.navigationController?.popViewController(animated: true)
         }
     }
-    
 
 }
-

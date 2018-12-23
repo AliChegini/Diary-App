@@ -131,8 +131,8 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhL-KX-Bsg">
-                                            <rect key="frame" x="76" y="11" width="38.5" height="28"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <rect key="frame" x="76" y="11" width="282" height="28"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -163,6 +163,7 @@
                                         <constraint firstItem="QhL-KX-Bsg" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" id="3p1-Ue-hxn"/>
                                         <constraint firstItem="giS-ne-TFK" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="5" id="AiX-ub-Q5a"/>
                                         <constraint firstItem="Koh-jw-QDY" firstAttribute="centerX" secondItem="giS-ne-TFK" secondAttribute="centerX" id="Bs7-v0-v0l"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="QhL-KX-Bsg" secondAttribute="trailing" constant="1" id="HLp-Yy-bJx"/>
                                         <constraint firstItem="4aO-dw-cC9" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" constant="60" id="Sme-fa-VJ5"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Jd1-gw-hC7" secondAttribute="bottom" constant="5" id="Ssp-lw-aJp"/>
                                         <constraint firstItem="QhL-KX-Bsg" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" constant="60" id="UeX-mC-BTw"/>

@@ -12,12 +12,19 @@ import CoreData
 
 
 extension Item {
-    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Item> {
         let request =  NSFetchRequest<Item>(entityName: "Item")
         request.sortDescriptors = [NSSortDescriptor(key: "text", ascending: true)]
         return request
     }
-    
 }
 
+
+extension Item {
+    static func dateGenerator() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .full
+        let convertedDate = dateFormatter.string(from: Date())
+        return convertedDate
+    }
+}
