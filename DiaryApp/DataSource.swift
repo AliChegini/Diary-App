@@ -52,7 +52,12 @@ class DataSource: NSObject, UITableViewDataSource {
         cell.dateLabel.text = item.date
         cell.diaryText.text = item.text
         
-        cell.location.text = item.location
+        if let location = item.location {
+            cell.location.text = location
+        } else {
+            cell.location.text = "Unknown Location"
+        }
+        
         if let img = item.imageData {
             cell.picture.image = UIImage(data: img as Data)
             cell.picture.setRounded()
