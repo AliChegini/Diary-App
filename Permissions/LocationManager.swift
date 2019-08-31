@@ -86,18 +86,22 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         guard let location = locations.last else {
             delegate?.failedWithError(.unableToFindLocation)
             return
         }
+        
+        
         
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location) { (placemark, error) in
             if let placemark = placemark {
                 var stringLocation = ""
                 let info = placemark[0]
-                if let name = info.name, let city = info.locality, let countryCode = info.isoCountryCode {
-                    stringLocation = "\(name), \(city), \(countryCode)"
+               
+                if let name = info.name, let countryCode = info.isoCountryCode {
+                    stringLocation = "\(name), \(countryCode)"
                     
                     // sending the location info via delegate
                     self.delegate?.obtainedLocation(stringLocation)

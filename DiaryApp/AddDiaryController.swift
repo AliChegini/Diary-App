@@ -122,7 +122,7 @@ extension AddDiaryController: LocationManagerDelegate {
     }
     
     func failedWithError(_ error: LocationError) {
-        print("Error: \(error)")
+        print("Error: \(error.localizedDescription)")
     }
 }
 
